@@ -15,6 +15,14 @@ function index(req, res) {
     res.redirect('/')
   })
 }
-export{
+
+function newSkill(req,res){
+  res.render('skills/new')
+}
+
+
+
+export {
   index,
+  newSkill as new,
 }
