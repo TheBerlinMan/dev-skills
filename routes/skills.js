@@ -7,5 +7,7 @@ const router = Router()
 router.get('/', skillsCtrl.index)
 // GET localhost:3000/skills/new
 router.get('/new', skillsCtrl.new)
+// POST localhost:3000/skills
+router.post('/', skillsCtrl.create)
 
 export { router }

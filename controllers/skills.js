@@ -20,9 +20,23 @@ function newSkill(req,res){
   res.render('skills/new')
 }
 
+function create(req,res){
+  console.log(req.body)
+  console.log(req.body.done = false);
+  req.body.done = false
+  Skill.create(req.body)
+  .then(skill => {
+    res.redirect('/skills')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/todos')
+  })
+}
 
 
 export {
   index,
   newSkill as new,
+  create,
 }
