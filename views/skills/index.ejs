@@ -8,10 +8,13 @@
 </head>
 <body>
 
-  <h1>Skills</h1>
+  <h1>Skills as of <%= time %></h1>
   <ul>
     <% skills.forEach(skill => { %>
       <li>
+        <form action="/skills/<%= skill._id %>?_method=DELETE" class="delete-form" method="POST">
+          <button type="submit">X</button>
+        </form>
 				<a href="/skills/<%= skill._id %>"><%= skill.text %></a>
 				- 
         <%= skill.learned ? 'learned' : 'not learned' %>
